@@ -1,24 +1,27 @@
-import React, {useEffect} from "react"
+import React, {useState, useEffect} from "react"
 import Movie from './components/Movie';
 
 const FEATURED_API = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=1cb22661a56a50da9fff9da1507d7089&page=1"
-const IMG_API = "https://image.tmbd.org/t/p/w1280";
-const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=1cb22661a56a50da9fff9da1507d7089&query="
+const SEARCH_API ="https://api.themoviedb.org/3/search/movie?&api_key=1cb22661a56a50da9fff9da1507d7089&query=";
 
 function App() {
 
   const [movies, setMovies] = useState([]);
   
-  useEffect(async()=>{
-   const moviesResp= await fetch(FEATURED_API);
-   const moviesR = await moviesResp.json();
-
-  setMovies(moviesR);
-  },[])
+  useEffect(()=>{
+   fetch(FEATURED_API)
+    .then((res) => res.json())
+    .then((data)=>{
+      console.log(data.results);
+      setMovies(data.results);
+    });
+  },[]);
 
   return  <div> 
-            {movies.map(movie =>(<Movie />))}
-          </div>
+            {movies.length>0 && movies.map((movie) =>
+            <Movie key={movie.id} {...movie} />
+            )}
+          </div>;
 }
 
 export default App;
