@@ -11,7 +11,6 @@ Search movies and show title, original title, overview and rating.
 ![](https://github.com/AlbertCos/Reto4/blob/master/moviegif3.gif)
 
 
-
 ## Installation
 Install react, 
 The webapp is using the movie db API  more information in https://www.themoviedb.org/
