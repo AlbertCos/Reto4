@@ -8,7 +8,7 @@ The movie app is a movie search webAPP. Theuser can search the movies introducin
 
 Search movies and show title, original title, overview and rating.
 
-![](https://github.com/AlbertCos/Reto4/blob/master/moviegif.gif)
+![](https://github.com/AlbertCos/Reto4/blob/master/moviegif3.gif)
 
 
 
